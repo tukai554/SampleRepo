@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+  <p>Name : <input type="text" ng-model="name"></p>
+  <h1>Hello {{name}} to your Shop</h1>
+  <input type="button" id="btnGet" value="Get All" ng-model="getall"/>
+  <input type="button" id="btnGetById" value="Get By ID" ng-click="showId()" 
+    ng-model="getbyid"/>
+</br><input id="ID" type="text" ng-init="" 
+ng-model="ID" ng-show="showid"/>
+
+</div>
+<script>
+var app=angular.module('myApp',[]);
+app.controller('myController',function($scope){
+    $scope.showid=false;
+    $scope.showId = function()
+    {
+      $scope.showid=true;
+    }
+});
+</script>
+
+</body>
+</html>
